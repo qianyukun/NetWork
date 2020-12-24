@@ -13,10 +13,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    signingConfigs {
+        release {
+            storeFile file('sign.jks')
+            keyAlias 'pimp'
+            keyPassword 'pimp123'
+            storePassword 'pimp123'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
+            debuggable false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -37,7 +46,7 @@ dependencies {
     //logansquare-compiler 需在主项目中单独添加，否则会抛出转换异常
     annotationProcessor 'com.bluelinelabs:logansquare-compiler:1.3.7'
 
-    implementation project(':network')
+    debugImplementation project(':network')
 
     releaseImplementation "com.kika.network:network:${network_version}"
 }

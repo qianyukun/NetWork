@@ -19,6 +19,17 @@ allprojects {
         google()
         jcenter()
     }
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'http://nexus.kikaops.com:37409/repository/maven-public/'
+            credentials {
+                username 'read'
+                password 'kika365'
+            }
+        }
+    }
 }
 
 task clean(type: Delete) {

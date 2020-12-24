@@ -20,10 +20,10 @@ afterEvaluate { project ->
                     name "network"
                     packaging "aar"
                     description "network"
-                    url "https://github.com/KikaTech/network"
+                    url "https://github.com/yangwenxinxm/NetWork"
 
                     scm {
-                        url "https://github.com/KikaTech/network"
+                        url "https://github.com/yangwenxinxm/NetWork"
                     }
                 }
 
