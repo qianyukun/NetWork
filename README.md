@@ -104,7 +104,7 @@ public class RequestManager {
 
                 @Override
                 public void success(Sound sound) {
-                    //服务端返回正确code 0就代表请求成功
+                    //服务端返回errorCode = 0会回调到success，TransformUtils.<Sound>defaultSchedulers()内部做了判断
                     if (sound != null) {
 
                     }
